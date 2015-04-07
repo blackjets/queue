@@ -115,8 +115,8 @@ public:
 				 tempmass[i-nomer]=massiv[i];
 			 }
 			
-			const T hui =sizeq - nomer + 1; 
-			sizeq = hui;// sizeq - nomer + 1;
+			
+			sizeq = sizeq - nomer + 1;
 				
 			delete [] massiv;
 
