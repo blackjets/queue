@@ -3,12 +3,12 @@
 
 	#include <iostream> 
 	#include <clocale>
-	#include <stdlib.h>
-#include <new>
+	#include <cstdlib>
+	#include <new>
 	
 	
-	using namespace      // »спользуем стандартное
-               std;      // пространство имен
+	using namespace  std;   // »спользуем стандартное
+                            // пространство имен
 
 template < class T > class IQueue
 {
@@ -40,7 +40,7 @@ public:
 
 		void put ( const T& elem )
 		{
-			T element = elem;
+			T put_in = elem;
 
 			sizeq++;
 
@@ -54,7 +54,7 @@ public:
 
 			delete [] massiv;
 
-			tempmass[sizeq] = element;
+			tempmass[sizeq] = put_in;
 
 			T *massiv;
 			massiv = new (nothrow) T [sizeq];
