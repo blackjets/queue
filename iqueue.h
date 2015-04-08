@@ -4,6 +4,7 @@
 	#include <iostream> 
 	#include <clocale>
 	#include <stdlib.h>
+#include <new>
 	
 	
 	using namespace      // Используем стандартное
@@ -32,7 +33,7 @@ protected:
 public:
 		MyQueue ( )
 		{
-			sizeq = 0;
+			sizeq = 1;
 			T *massiv;
 			massiv = new (nothrow) T [sizeq];
 		}
@@ -106,30 +107,6 @@ public:
 			 int nomer = i;
 
 			 temporary = massiv[nomer];
-
-			 T *tempmass;
-			 tempmass = new (nothrow) T [sizeq-nomer+1];	 
-				
-			 for (int i=nomer; i<sizeq; i++)
-			 {
-				 tempmass[i-nomer]=massiv[i];
-			 }
-			
-			
-			sizeq = sizeq - nomer + 1;
-				
-			delete [] massiv;
-
-			T *massiv;
-			massiv = new (nothrow) T [sizeq];
-
-			 for (int i=0; i<sizeq; i++)
-			 {
-				 massiv[i] = tempmass[i];
-			 }
-
-			delete [] tempmass;
-
 
 			 return temporary;
 		}
